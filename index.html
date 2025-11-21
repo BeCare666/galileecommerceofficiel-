@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="img/logo_galile_mobile.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galilée Commerce - Bientôt disponible</title>
+
+    <!-- Police moderne et bold -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* === RESET CSS DE BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #9a1f63;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* === SECTIONS === */
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 4rem 8%;
+            gap: 2rem;
+            position: relative;
+        }
+
+        /* ✅ Supprime tout espace entre les sections */
+        section+section {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        /* ✅ Supprime le fond visible ou bordure parasite */
+        #coming-soon {
+            border: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        #stay-connected {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        /* === Texte === */
+        .text-content {
+            flex: 1 1 400px;
+            max-width: 600px;
+        }
+
+        .text-content h1,
+        .text-content h2 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .text-content p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .text-content a {
+            display: inline-block;
+            text-decoration: none;
+            background: #fff;
+            color: #9a1f63;
+            padding: 0.9rem 1.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .text-content a:hover {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            transform: translateY(-3px);
+        }
+
+        /* === Images === */
+        .image-content {
+            flex: 1 1 400px;
+            text-align: center;
+        }
+
+        .image-content img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            transition: transform 0.4s ease;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-content img:hover {
+            transform: scale(1.05);
+        }
+
+        /* === Section 1 === */
+        #coming-soon {
+            flex-direction: row-reverse;
+        }
+
+        #coming-soon .image-content img {
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* === Section 2 === */
+        #stay-connected .image-content img {
+            border-radius: 12px;
+            transition: transform 0.4s ease, filter 0.3s;
+        }
+
+        #stay-connected .image-content img:hover {
+            transform: translateY(-10px) scale(1.03);
+            filter: brightness(1.1);
+        }
+
+        /* === TITRE FIXE SUR DESKTOP === */
+        @media (min-width: 1025px) {
+            .firstTitle {
+                position: absolute;
+                z-index: 999;
+                top: 50px;
+                left: 100px;
+                font-size: 55px !important;
+                font-weight: 700;
+                white-space: nowrap !important;
+            }
+
+            .firstTitle1 {
+                position: absolute;
+                z-index: 999;
+                top: 110px;
+                left: 100px;
+                font-size: 55px !important;
+                font-weight: 700;
+                white-space: nowrap !important;
+            }
+
+            #turnLogo {
+                bottom: 28px !important;
+            }
+        }
+
+        /* === MOBILE & TABLETTE === */
+        @media (max-width: 1024px) {
+            section {
+                flex-direction: column;
+                text-align: center;
+                padding: 3rem 5%;
+            }
+
+            .text-content {
+                max-width: 100%;
+                order: 2;
+            }
+
+            .image-content {
+                order: 1;
+            }
+
+            .firstTitle {
+                position: absolute;
+                z-index: 999;
+                top: 25px;
+                left: 10px;
+                font-size: 1.5rem !important;
+                font-weight: 700;
+                white-space: nowrap !important;
+            }
+
+            .firstTitle1 {
+                position: absolute;
+                z-index: 999;
+                top: 55px;
+                left: 10px;
+                font-size: 1.5rem !important;
+                font-weight: 700;
+                white-space: nowrap !important;
+            }
+
+            #stay-connected .image-content {
+                max-height: 40vh !important;
+            }
+
+            .text-content h2 {
+                text-align: left !important;
+            }
+        }
+
+        /* === Bouton flottant === */
+        #turnLogo {
+            position: fixed;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+        }
+
+        #turnLogo button {
+            background: linear-gradient(90deg, #6366F1, #8B5CF6, #EC4899);
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        #turnLogo button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 736px) {
+            #turnLogo {
+                bottom: 8px;
+            }
+        }
+
+        @media (max-width: 636px) {
+            #turnLogo {
+                bottom: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- === SECTION 1 === -->
+    <section id="coming-soon">
+        <h1 class="firstTitle">GALILEECOMMER.COM</h1>
+        <h1 class="firstTitle1">ARRIVE !</h1>
+        <div class="image-content">
+            <img src="img/comm1.png" alt="Homme sautant de joie">
+        </div>
+
+        <div class="text-content">
+            <h2>
+                Enfin !<br>
+                L’incontournable plateforme digitale
+                pour le commerce en Afrique arrive en novembre.
+            </h2>
+        </div>
+    </section>
+
+    <!-- === SECTION 2 === -->
+    <section id="stay-connected">
+        <div class="image-content">
+            <img src="img/commi.png" alt="Personnes dynamiques">
+        </div>
+
+        <div class="text-content">
+            <h2>
+                RESTEZ CONNECTÉS POUR<br>
+                NE RIEN MANQUER<br>
+                DES DERNIÈRES ACTUALITÉS
+            </h2>
+            <img src="img/logo_white.png" alt="Logo Galilée Commerce" style="margin-top:2rem;width:260px;">
+        </div>
+    </section>
+
+    <div id="turnLogo">
+        <button>Actualités</button>
+    </div>
+
+    <script>
+        document.getElementById("turnLogo").addEventListener("click", function () {
+            window.location.href = "actualités.html";
+        });
+    </script>
+</body>
+
+</html>
